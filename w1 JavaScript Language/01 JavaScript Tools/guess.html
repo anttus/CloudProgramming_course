@@ -9,9 +9,9 @@ body {margin: 30px;}
 </head>
 <body>
 <p>Guess a number between 1 and 10</p>
-<form>
-  <input type="text" name="number">
-  <button >Submit</button>
+<form id="inputForm" onsubmit="return false">
+  <input type="text" name="number" id="inputText">
+  <input type="submit" id="submitBtn"></button>
 </form>
 <script src="./js/guess.js"></script>
 </body>

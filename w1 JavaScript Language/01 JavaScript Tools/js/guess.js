@@ -1,23 +1,30 @@
 let targetNumber = Math.floor(Math.random() * 10) + 1;
+let guessNumber = 0;
 
-function init () {
-	console.log("You have to code this!");
+function init() {
+	let submitBtn = document.getElementById('submitBtn');
+	submitBtn.onclick = function () {
+		check(document.getElementById('inputText').value);
+		guessNumber++;
+	}, false;
 }
 
-function check (value) {
-  
+function check(value) {
+	if (value == targetNumber) showWin();
+	else if (value != targetNumber && guessNumber >= 5) showLoss();
+	else showError();
 }
 
-function showWin () {
-  
+function showWin() {
+	console.log("You win.");
 }
 
-function showError () {
-  
+function showError() {
+	console.log("The guess is incorrect.");
 }
 
-function showLoss () {
-  
+function showLoss() {
+	console.log("You lose.");
 }
 
 init();

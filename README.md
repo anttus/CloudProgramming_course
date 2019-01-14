@@ -164,5 +164,3 @@ node -p process.versions.v8
 ```
 
 =======
-# CloudProgramming_course
-Assignments for the Cloud Programming course

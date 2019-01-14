@@ -163,3 +163,6 @@ node -p process.versions.v8
   5.1.281.89
 ```
 
+=======
+# CloudProgramming_course
+Assignments for the Cloud Programming course

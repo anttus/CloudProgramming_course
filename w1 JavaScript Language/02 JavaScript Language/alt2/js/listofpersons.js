@@ -1,4 +1,4 @@
-var manager = {};
+let manager = {};
 
 manager.domain = {};
 manager.domain.Person = function (name, address) {
@@ -13,7 +13,7 @@ manager.domain.Person.prototype.toString = function () {
 
 manager.gui = (function () {
     function update() {
-        var personsElement = document.getElementById("persons");
+        let personsElement = document.getElementById("persons");
         clear(personsElement);
 
         populate(personsElement);
@@ -26,26 +26,25 @@ manager.gui = (function () {
     }
 
     function populate(element) {
-        var persons = manager.data.list();
-        for (var i = 0; i < persons.length; i++) {
+        let persons = manager.data.list();
+        for (let i = 0; i < persons.length; i++) {
             addPersonToElement(element, persons[i]);
         }
     }
 
     function addPersonToElement(element, person) {
-        var textElement = document.createElement("p");
-        var textNode = document.createTextNode(person.toString());
+        let textElement = document.createElement("p");
+        let textNode = document.createTextNode(person.toString());
         textElement.appendChild(textNode);
 
         element.appendChild(textElement);
     }
 
     function buttonPressed() {
-        // toteuta tänne toiminnallisuus, jossa haet dokumentissa olevasta
-        // lomakkeesta nimen ja osoitteen, luot niistä uuden henkilön, 
-        // ja lopulta kutsut manager.data.add -funktiota, jolle annat parametrina
-        // henkilön
-
+        let name = document.getElementById("name").value;
+        let address = document.getElementById("address").value;
+        let newPerson = new manager.domain.Person(name, address);
+        manager.data.add(newPerson);
     }
 
     return {
@@ -55,24 +54,25 @@ manager.gui = (function () {
 })();
 
 manager.data = (function (updateHook) {
-    var persons = new Array();
+    let persons = new Array();
 
-    // toteuta tähän funktio addPerson, joka saa parametrina Person-olion.
-    // Metodissa addPerson Person-olio lisätään persons-muuttujaan, jonka
-    // jälkeen kutsutaan funktiota updateHook
+    function addPerson(person) {
+        persons.push(person);
+        updateHook();
+    }
 
+    function list() {
+        return persons;
+    }
 
-    // toteuta tähän funktio list, joka palauttaa persons-muuttujan, eli listan
-
-
-    // palauta tässä funktiot addPerson siten, että sen julkinen nimi on add, ja
-    // list siten, että sen julkinen nimi on list
-
+    return {
+        add: addPerson,
+        list: list
+    };
 
 })(manager.gui.update);
 
 function init() {
-    var addPersonButton = document.getElementById("add-person");
+    let addPersonButton = document.getElementById("add-person");
     addPersonButton.addEventListener("click", manager.gui.buttonPressed, false);
 }
-

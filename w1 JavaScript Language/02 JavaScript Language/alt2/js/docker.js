@@ -1,34 +1,92 @@
-// koodi:
-var stone = new Stuff("stone", 3);
-var book = new Stuff("book", 7);
-var cotton = new Stuff("cotton", 0.001);
+class Stuff {
+    constructor(name, weight) {
+        this.name = name;
+        this.weight = weight;
+    }
+}
 
-var bag = new Bag(10);
-var vuitton = new Bag(3);
+class Bag {
+    constructor(maxWeight) {
+        this.maxWeight = maxWeight;
+        this.itemArray = [];
+        this.totalWeight = 0;
+    }
 
-var schenker = new Cargo(15);
+    add(item) {
+        if (!item instanceof Stuff) throw new Error("Wrong kind of objetct, not allowed!");
+        else if (this.itemArray.includes(item)) throw new Error("Stuff already added, not allowed!");
+        else if ((this.totalWeight + item.weight) > this.maxWeight) throw new Error("Too heavy, not allowed!");
+        else {
+            this.itemArray.push(item);
+            this.totalWeight += item.weight;
+        }
+    }
 
+    weight() {
+        return this.totalWeight;
+    }
+}
 
-bag.add(stone);
-console.log("Bag's weight should be 3: " + bag.weight());
-bag.add(stone); // Error: "Stuff already added, not allowed!"
+class Cargo {
+    constructor(maxWeight) {
+        this.maxWeight = maxWeight;
+        this.itemArray = [];
+        this.totalWeight = 0;
+    }
 
-bag.add(book);
-console.log("Bag's weight should be 10: " + bag.weight());
+    add(item) {
+        if (!item instanceof Bag) throw new Error("Wrong kind of objetct, not allowed!");
+        else if (this.itemArray.includes(item)) throw new Error("Stuff already added, not allowed!");
+        else if ((this.totalWeight + item.weight) > this.maxWeight) throw new Error("Too heavy, not allowed!");
+        else {
+            this.itemArray.push(item);
+            this.totalWeight += item.weight;
+        }
+    }
 
-bag.add(cotton); // Error: "Too heavy, not allowed!"
+    weight() {
+        return this.totalWeight;
+    }
+}
 
-console.log("Bag's weight should be 10: " + bag.weight());
-
-
-schenker.add(bag);
-schenker.add(cotton); // Error: Wrong kind of object, not allowed!
-
-console.log("Cargo's weight should be 10: " + schenker.weight());
-
-vuitton.add(cotton);
-schenker.add(vuitton);
-console.log("Cargo's weight should be about 10.001: " + schenker.weight()); 
-
-cotton.weight = 300;
-console.log("Cargo's weight should be 310: " + schenker.weight()); // oops!
+describe("A spec using beforeAll", function () {
+    let stone, bag, book, cotton, vuitton, schenker;
+    beforeAll(function () {
+        bag = new Bag(10);
+        stone = new Stuff("stone", 3);
+        book = new Stuff("book", 7);
+        cotton = new Stuff("cotton", 0.001);
+        vuitton = new Bag(3);
+        schenker = new Cargo(15);
+    });
+    it('Bag\'s weight should be 3: ', function () {
+        bag.add(stone);
+        expect(bag.weight()).toBe(3);
+    });
+    it('Bag\'s weight should be 3: ', function() {
+        expect(() => { bag.add(stone); }).toThrowError("Stuff already added, not allowed!");
+    });
+    it('Bag\'s weight should be 10: ', function() {
+        bag.add(book);
+        expect(bag.weight()).toBe(10);
+    });
+    it('Should throw error because max weight is exceeded: ', function() {
+        expect(() => { bag.add(cotton); }).toThrowError("Too heavy, not allowed!");
+    });
+    it('Cargo\'s weight should be 10: ', function() {
+        schenker.add(bag);
+        expect(schenker.weight()).toBe(10);
+    });
+    it('Should throw error because wrong kind of item: ', function() {
+        expect(() => { schenker.add(cotton); }).toThrowError("Wrong kind of objetct, not allowed!");
+    });
+    it('Cargo\'s weight should be 10.001: ', function() {
+        vuitton.add(cotton);
+        schenker.add(vuitton);
+        expect(schenker.weight()).toBe(10.001);
+    });
+    it('Cargo\'s weight should be 310: ', function() {
+        cotton.weight = 300;
+        expect(schenker.weight()).toBe(10.001);
+    });
+});

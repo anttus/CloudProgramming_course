@@ -1,25 +1,45 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title> JSON </title>
-  <script>
-
-var fidoString = '{ "name": "Fido", "breed": "Mixed", "weight": 38 }';
-var fido = JSON.parse(fidoString);
-console.log("We have made a dog out of a string! " + fido.name);
-
-
-var fido2 = {
-	name: "Fido",
-	breed: "Mixed",
-	weight: 38
-};
-var fidoString = JSON.stringify(fido2);
-console.log("We made a string from a dog! " + fidoString);
-
-  </script>
 </head>
 <body>
+  <div id="myDiv"></div>
+  <div id="myDiv1"></div>
 </body>
+
+<script>
+
+  let fidoString = '{ "name": "Fido", "breed": "Mixed", "weight": 38 }';
+  let fido = JSON.parse(fidoString);
+  console.log("We have made a dog out of a string! " + fido.name);
+
+  let fido2 = {
+    name: "Fido",
+    breed: "Mixed",
+    weight: 38
+  };
+  fidoString = JSON.stringify(fido2);
+  console.log("We made a string from a dog! " + fidoString);
+
+  let animal = {
+    breed: {
+      german: "Zwergschnauzer",
+      english: "Miniature Schnauzer",
+      swedish: "Miniatyrschnauzer",
+    },
+    sound: "bork"
+  }
+  let myString = JSON.stringify(animal);
+  document.getElementById("myDiv").innerHTML = myString;
+
+  let myObject = JSON.parse(myString);
+  let animalBreed = myObject.breed;
+  let breedString = JSON.stringify(animalBreed);
+  document.getElementById("myDiv1").innerHTML = breedString;
+
+</script>
+
 </html>

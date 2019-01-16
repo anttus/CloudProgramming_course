@@ -21,6 +21,9 @@
 			let textDiv = document.getElementById("textDiv");
 			if (textDiv.addEventListener) textDiv.addEventListener("mouseover", mouseOver, false);
 			else if (textDiv.attachEvent) textDiv.attachEvent("mouseover", mouseOver);
+
+			if (textDiv.addEventListener) textDiv.addEventListener("click", handleClick, false);
+			else if (textDiv.attachEvent) textDiv.attachEvent("click", handleClick);
 		};
 
 		function handleClick(e) {
@@ -31,7 +34,7 @@
 			} else {
 				target = evt.srcElement;
 			}
-			alert("You clicked on " + target.id);
+			console.log("You clicked on " + target.id);
 		}
 
 		function mouseOver(e) {
@@ -39,7 +42,7 @@
 			let target;
 			if (event.target)	target = event.target;
 			else target = event.srcElement;
-			alert("Mouse hovered over " + target.id);
+			console.log("Mouse hovered over " + target.id);
 		} 
 
 	</script>

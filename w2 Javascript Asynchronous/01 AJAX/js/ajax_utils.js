@@ -2,7 +2,7 @@ var fakeSlowNetwork;
 
 // you can ignore this immediately-executing function
 // it is used to simulate a slow network to show you how AJAX and Promises work
-(function() {
+(function () {
   var lsKey = 'fake-slow-network';
   var networkFakeDiv = document.querySelector('.network-fake');
   var checkbox = networkFakeDiv.querySelector('input');
@@ -12,7 +12,7 @@ var fakeSlowNetwork;
   networkFakeDiv.style.display = 'block';
   checkbox.checked = !!fakeSlowNetwork;
 
-  checkbox.addEventListener('change', function() {
+  checkbox.addEventListener('change', function () {
     localStorage.setItem(lsKey, Number(checkbox.checked));
     location.reload();
   });
@@ -48,7 +48,15 @@ function getSync(url) {
 }
 
 function getJsonSync(url) {
-  return JSON.parse(getSync(url));
+  let data = JSON.parse(getSync(url));
+  if (data['html'] != null) {
+    if (data['html'].includes("dictum")) {
+      let definition = JSON.parse(getSync('api.wordnik.com/v4/word.json/dictum?api_key=APIKEY')); //Doesn't work without api key
+      let newElement = document.getElementsByClassName("body").appendChild("div");
+      newElement.innerHTML = definition;
+    }
+  }
+  return data;
 }
 
 

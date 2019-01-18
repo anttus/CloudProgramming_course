@@ -33,6 +33,11 @@
         .then(function(chapter) {
           // and add it to the page
           addHtmlToPage(chapter.html);
+        })
+        .then(() => {
+          let response;
+          let dialog = confirm("Continue to the next chapter?");
+          if (dialog == false) throw ({ message: "User aborted download" });
         });
       }, Promise.resolve());
     })

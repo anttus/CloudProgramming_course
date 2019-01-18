@@ -18,20 +18,27 @@
         // then add a click listener
         var helloButton = U.$('hello');
         var clickAction = function() { alert('Well HELLO!'); };
-        window.$live('button', 'click', clickAction);
+        window.$live('#hello', 'click', clickAction);
         
         // this one removes the listener after a click
         var helloOnce = U.$('hi');
         var alertOnce = function() {
             alert('Well HELLO!');
-            // U.removeEvent(helloOnce, 'click', alertOnce);
+            U.removeEvent(helloOnce, 'click', alertOnce);
         };
-        window.$live('button', 'click', alertOnce);
+        window.$live('#hi', 'click', alertOnce);
 
         var writeText = U.$('write');
-        U.addEvent(writeText, 'click', function() {
+        window.$live('#write', 'click', function() {
             U.setText('output', "Writing some new text for you.");
         });
+
+        let newEl = document.createElement('button');
+        newEl.textContent = "New element - Click here!";
+        newEl.setAttribute('id', 'newEl');
+        document.getElementById('output').appendChild(newEl);
+        window.$live('#newEl', 'click', () => { alert("New element clicked"); });
+
     </script>
 </body>
 </html>

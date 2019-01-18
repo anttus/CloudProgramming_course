@@ -51,12 +51,30 @@ function getJsonSync(url) {
   let data = JSON.parse(getSync(url));
   if (data['html'] != null) {
     if (data['html'].includes("dictum")) {
-      let definition = JSON.parse(getSync('api.wordnik.com/v4/word.json/dictum?api_key=APIKEY')); //Doesn't work without api key
-      let newElement = document.getElementsByClassName("body").appendChild("div");
-      newElement.innerHTML = definition;
+      // let definition = JSON.parse(getSync('api.wordnik.com/v4/word.json/dictum?api_key=APIKEY')); //Doesn't work without api key
+      let newElement = document.createElement("div");
+      newElement.setAttribute('id', 'newElement');
+      document.getElementById("storyDiv").appendChild(newElement);
+      newElement.innerHTML = 'Dictum: Doesn\'t work because it requires API key';
     }
   }
   return data;
+}
+
+function getSelection() {
+  let txt = '';
+  if (window.getSelection) {
+    txt = window.getSelection();
+  } else if (document.getSelection) {
+    txt = document.getSelection();
+  } else if (document.selection) {
+    txt = document.selection.createRange().text;
+  }
+  return txt;
+}
+
+document.ondblclick = () => {
+  let t = getSelection();
 }
 
 

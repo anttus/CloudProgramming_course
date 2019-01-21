@@ -2,7 +2,7 @@ var fakeSlowNetwork;
 
 // you can ignore this immediately-executing function
 // it is used to simulate a slow network to show you how AJAX and Promises work
-(function() {
+(function () {
   var lsKey = 'fake-slow-network';
   var networkFakeDiv = document.querySelector('.network-fake');
   var checkbox = networkFakeDiv.querySelector('input');
@@ -12,7 +12,7 @@ var fakeSlowNetwork;
   networkFakeDiv.style.display = 'block';
   checkbox.checked = !!fakeSlowNetwork;
 
-  checkbox.addEventListener('change', function() {
+  checkbox.addEventListener('change', function () {
     localStorage.setItem(lsKey, Number(checkbox.checked));
     location.reload();
   });
@@ -21,7 +21,7 @@ var fakeSlowNetwork;
 // Use a promise that resolves after a given waiting time
 // again, used to help simulate a slow network.
 function wait(ms) {
-  return new Promise(function(resolve) {
+  return new Promise(function (resolve) {
     setTimeout(resolve, ms);
   });
 }
@@ -32,13 +32,13 @@ function get(url) {
   var fakeNetworkWait = wait(3000 * Math.random() * fakeSlowNetwork);
 
   // HERE IS THE MAIN CODE...
-  var requestPromise = new Promise(function(resolve, reject) {
+  var requestPromise = new Promise(function (resolve, reject) {
     // Do the usual XHR stuff
     // See Week 4 material
     var req = new XMLHttpRequest();
     req.open('get', url);
 
-    req.onload = function() {
+    req.onload = function () {
       // 'load' triggers for 404s etc
       // so check the status
       if (req.status == 200) {
@@ -52,7 +52,7 @@ function get(url) {
     };
 
     // Handle network errors
-    req.onerror = function() {
+    req.onerror = function () {
       reject(Error("Network Error"));
     };
 
@@ -62,7 +62,7 @@ function get(url) {
 
   // the all() method just requires every promise to complete
   // before it will resolve
-  return Promise.all([fakeNetworkWait, requestPromise]).then(function(results) {
+  return Promise.all([fakeNetworkWait, requestPromise]).then(function (results) {
     return results[1];
   });
 }
@@ -87,4 +87,11 @@ function addTextToPage(content) {
   var p = document.createElement('p');
   p.textContent = content;
   storyDiv.appendChild(p);
+}
+
+function addButton(name) {
+  let button = document.createElement('button');
+  button.setAttribute('id', name);
+  button.textContent = name;
+  storyDiv.appendChild(button);
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Promises test</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="network-fake">
+    <label><input type="checkbox"> Fake network delay</label>
+  </div>
+  <div class="story"></div>
+  <svg class="spinner" viewBox="0 0 100 100" width="20" height="20">
+    <circle cx="50" cy="50" r="42" transform="rotate(-90,50,50)" />
+  </svg>
+
+  <script src="js/promise-2.0.4.min.js"></script>
+  <script src="js/utils.js"></script>
+  <script>
+    document.querySelector('.spinner').style.display = 'none';
+
+    let promises = [];
+    for (let i = 1; i <= 5; i++) {
+      let btnName = 'btn' + i;
+      let promise;
+      addButton(btnName);
+      promise = new Promise((resolve, reject) => {
+        document.getElementById(btnName).onclick = () => {
+          resolve(btnName);
+        }
+      });
+      promises.push(promise);
+    }
+
+    promises.map(function (data) { return data; }).reduce(function (chain, thePromise) {
+      return chain.then(function () {
+        return thePromise;
+      }).then(function (value) {
+        addHtmlToPage(value);
+      });
+    }, Promise.resolve());
+  </script>
+</body>
+
+</html>

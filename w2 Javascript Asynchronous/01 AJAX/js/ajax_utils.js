@@ -51,17 +51,19 @@ function getJsonSync(url) {
   let data = JSON.parse(getSync(url));
   if (data['html'] != null) {
     if (data['html'].includes("dictum")) {
-      // let definition = JSON.parse(getSync('api.wordnik.com/v4/word.json/dictum?api_key=APIKEY')); //Doesn't work without api key
-      let newElement = document.createElement("div");
-      newElement.setAttribute('id', 'newElement');
-      document.getElementById("storyDiv").appendChild(newElement);
-      newElement.innerHTML = 'Dictum: Doesn\'t work because it requires API key';
+      let definition = JSON.parse(getSync('https://api.datamuse.com/words?rel_syn=dictum'));
+      addTextToPage('Dictum: ' + JSON.stringify(definition));
     }
   }
   return data;
 }
 
-function getSelection() {
+function getDefinition(word) {
+  let definition = getSync('https://api.datamuse.com/words?rel_syn=' + word);
+  return definition;
+}
+
+function get_selection() {
   let txt = '';
   if (window.getSelection) {
     txt = window.getSelection();
@@ -73,8 +75,11 @@ function getSelection() {
   return txt;
 }
 
-document.ondblclick = () => {
-  let t = getSelection();
+document.ondblclick = (e) => {
+  let selection = get_selection().toString();
+  let definition = getDefinition(selection);
+  if (definition == "[]") addToList("NOT FOUND");
+  else addToList(definition);
 }
 
 
@@ -93,4 +98,10 @@ function addTextToPage(content) {
   var p = document.createElement('p');
   p.textContent = content;
   storyDiv.appendChild(p);
+}
+
+function addToList(word) {
+  var li = document.createElement('li');
+  li.textContent = word;
+  storyDiv.appendChild(li);
 }

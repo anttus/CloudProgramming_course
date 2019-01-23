@@ -1,38 +1,55 @@
+STORAGE_KEY = 'results_key';
+let resultStorage = {
+    fetch: function () {
+        let results = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        console.log(localStorage.getItem(STORAGE_KEY));
+        results.forEach((result, index) => {
+            result.id = index;
+        });
+        resultStorage.uid = results.length;
+        return results;
+    },
+    save: function (results) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(results));
+    }
+}
+
 function isNotNumericValue(value) {
     return isNaN(value) || !isFinite(value);
 }
-// var calc = new Vue({
-//     el: '#app',
-//     data: { x: 0, y: 0, lastResult: 0 },
-//     computed: {
-//         result: function () {
-//             let x = parseFloat(this.x);
-//             if (isNotNumericValue(x))
-//                 return this.lastResult;
 
-//             let y = parseFloat(this.y);
-//             if (isNotNumericValue(y))
-//                 return this.lastResult;
-
-//             this.lastResult = x + y;
-
-//             return this.lastResult;
-//         }
-//     }
-// });
-
-let x;
-var calc = new Vue({
+const calc = new Vue({
     el: '#app',
-    data: {
-        x: '',
-        y: '',
-        result: '',
-    },
-    // define methods under the `methods` object
+    data: { x: '', y: '', result: '', results: resultStorage.fetch(), },
     methods: {
-        multiply: function (event) {
-            return this.x * this.y;
-        }
+        multiply: function () {
+            let x = parseFloat(this.x);
+            if (isNotNumericValue(x)) return this.result;
+            let y = parseFloat(this.y);
+            if (isNotNumericValue(y)) return this.result;
+
+            res = x * y;
+            this.result = res;
+
+        },
+        divide: function () {
+            let x = parseFloat(this.x);
+            if (isNotNumericValue(x)) return this.result;
+            let y = parseFloat(this.y);
+            if (isNotNumericValue(y)) return this.result;
+
+            if (this.y != 0) res = x / y;
+            else res = "Division by zero.";
+
+            this.result = res;
+        },
+        // watch: {
+        //     results: {
+        //         handler (results) {
+        //             resultStorage.save(results);
+        //         },
+        //         deep: true
+        //     }
+        // },
     }
-})
+});

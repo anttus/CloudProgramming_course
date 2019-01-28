@@ -5,37 +5,44 @@
   
 </head>
 <body>
-<div id ="blog-post-demo" class="demo">
- <blog-post
-  v-for="post in posts"
-  v-bind:key="post.id"
-  v-bind:post="post.title"
-></blog-post>
+  <div id ="blog-user-demo" class="demo">
+    <blog-user v-for="user in users" v-bind:key="user.id" v-bind:user="user"></blog-user>
+  </div>
 </div>
 <script type="text/javascript">
-Vue.component('blog-post', {
-  props: ['post'],
-  template: '<h3>{{ post.title }}</h3>'
-})
-new Vue({
-  el: '#blog-post-demo',
-  data: {
-    posts: [  ]
-  },
-  created: function () {
-    // Alias the component instance as `vm`, so that we  
-    // can access it inside the promise function
-    var vm = this
-    // Fetch our array of posts from an API
-    fetch('https://jsonplaceholder.typicode.com/posts')
+  Vue.component('blog-user', {
+    props: ['user'],
+    template: `
+    <div class="blog-post">
+      <h3>{{ user.name }}</h3>
+      <p>{{ user.address.street }}</p>
+      <p>{{ user.address.suite }}</p>
+      <p>{{ user.address.city }}</p>
+      <p>{{ user.address.zipcode }}</p>
+      <br>
+      <div v-html="user.content"></div>
+    </div>
+    `
+  })
+  new Vue({
+    el: '#blog-user-demo',
+    data: {
+      users: [  ]
+    },
+    created: function () {
+      // Alias the component instance as `vm`, so that we  
+      // can access it inside the promise function
+      var vm = this
+      // Fetch our array of users from an API
+      fetch('https://jsonplaceholder.typicode.com/users')
       .then(function (response) {
         return response.json()
       })
       .then(function (data) {
-        vm.posts = data
+        vm.users = data
       })
-  }
-})
-   </script>
-  </body>
+    }
+  })
+</script>
+</body>
 </html>

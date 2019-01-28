@@ -12,6 +12,12 @@
       <div>{{ person.name }} <small>({{ person.tweet }} tweets)</small></div>
     </template>
   </my-list>
+  <!-- Parties -->
+  <my-list class="parties" :items="parties" title="Parties">
+    <template slot-scope="party">
+      <div>{{ party.name }} <small>({{ party.senators }} senators)</small></div>
+    </template>
+  </my-list>
 </div>
 
 <script type="text/x-template" id="my-list">

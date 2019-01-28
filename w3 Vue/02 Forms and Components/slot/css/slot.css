@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(270deg, #0E6251, #28B463);
+  background: linear-gradient(270deg, rgb(190, 20, 20), rgb(20, 44, 195));
 }
 #app {
   display: flex;
@@ -11,18 +11,27 @@ body {
   margin: 20px;
 }
 .title {
-    background: #A93226;
-    font-weight: bold;
-    font-size: 22px;
-  }
+  background: #A93226;
+  font-weight: bold;
+  font-size: 22px;
+}
 .list {
-    background: #34495E;
-    font-size: 16px;
-  }
+  background: #34495E;
+  font-size: 16px;
+}
 .list-item:not(:last-child) {
-    padding-bottom: 15px;
-  }
+  padding-bottom: 15px;
+}
 
+.parties .title {
+  background: rgb(38, 56, 169);
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.parties .list {
+  background: black;
+}
 
 .swatch {
   display: inline-block;

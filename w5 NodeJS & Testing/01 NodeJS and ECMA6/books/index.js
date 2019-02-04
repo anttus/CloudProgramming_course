@@ -7,6 +7,7 @@ input.on('data', chunk => {
   const text = chunk.toString().trim()
   const space = text.indexOf(' ')
   const item = text.substring(space).trim()
+  
   if (text.indexOf('search ') === 0) {
     console.log('searching for "'+item+'"')
     /* Notice how the callback takes two parameters, an error and the data where a non-null error parameter indicates an error has ocurred. */
@@ -31,5 +32,27 @@ input.on('data', chunk => {
     } finally {
       console.log('the list contains '+books.bookCount()+' books')
     }
+  }
+  if (text.indexOf('remove' ) === 0) {
+    console.log('removing "' + item + '"');
+    try {
+      books.remove(item);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      console.log('the list contains ' + books.bookCount() + ' books')
+    }
+  }
+  if (text.indexOf('describe ') === 0) {
+    console.log('describing "' + item + '"')
+    /* Notice how the callback takes two parameters, an error and the data where a non-null error parameter indicates an error has ocurred. */
+    books.describe(item, (err, data) => {
+      if (err) {
+        /* the message property contains the string passed to the error object. */
+        console.log(err.message)
+        return
+      }
+      console.log(JSON.stringify(data, null, 2))
+    })
   }
 })

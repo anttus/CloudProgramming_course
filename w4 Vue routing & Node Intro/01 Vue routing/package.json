@@ -1,0 +1,14 @@
+{
+  "name": "routing",
+  "version": "1.0.0",
+  "description": "Now you have mastered the concepts of binding and directives we can learn about how VueJS can be used to develop complex [single-page applications](https://en.wikipedia.org/wiki/Single-page_application) (SPA). A single-page application behaves like a desktop app where content is dynamically loaded as needed without the entire page being downloaded and replaced. You will have already experienced SPAs through tools such as _Google Drive_ and _Outlook_.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.5.22"
+  }
+}

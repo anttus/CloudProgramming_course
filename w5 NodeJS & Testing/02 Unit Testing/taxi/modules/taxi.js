@@ -21,7 +21,7 @@ exports.getFare = function(destination, callback) {
 
 /* this function returns API data but the data won't vary between calls. We could get away without mocking this call. */
 function getLatLon(address) {
-	var url = 'https://maps.googleapis.com/maps/api/geocode/json?region=uk&address='
+	var url = 'https://nominatim.openstreetmap.org/search?country=uk&address='
 	var res = sync('GET', url+address)
 	data = JSON.parse(res.getBody().toString('utf8'))
 	var loc = data.results[0].geometry.location

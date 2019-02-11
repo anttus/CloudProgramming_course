@@ -74,4 +74,51 @@ describe('Shopping List', function () {
 		}
 	})
 
+	it('should decrement two cheese from the list', () => {
+		try {
+			list.add('cheese')
+			list.add('cheese')
+			list.add('cheese')
+			list.decrement('cheese', 2)
+			expect(list.getItem('cheese').qty).toBe(1)
+		} catch(err) {
+			expect(err.message).toBe('item not in list')
+		}
+	})
+
+	it('should throw error because item is not in list', () => {
+		try {
+			list.decrement('cheese', 1)
+		} catch(err) {
+			expect(err.message).toBe('item not in list')
+		}
+	})
+
+	it('should throw an error for not using two arguments', () => {
+		try {
+			list.add('cheese')
+			list.decrement('cheese')
+		} catch(err) {
+			expect(err.message).toBe('function requires two parameters')
+		}
+	})
+
+	it('should throw error because the second argument is not a number', () => {
+		try {
+			list.add('cheese')
+			list.decrement('cheese', 'one')
+		} catch (err) {
+			expect(err.message).toBe('second parameter should be a number')
+		}
+	})
+
+	it('should delete the item if the decrement value is larger than qty of the item', () => {
+		try {
+			list.add('cheese')
+			list.decrement('cheese', 2)
+		} catch (err) {
+			expect(err.message).toBe('item not found')
+		}
+	})
+
 })

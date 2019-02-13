@@ -1,0 +1,428 @@
+{
+  "response": {
+    "metaInfo": {
+      "timestamp": "2019-02-13T08:07:02Z",
+      "mapVersion": "8.30.92.153",
+      "moduleVersion": "7.2.201902-1480",
+      "interfaceVersion": "2.6.34",
+      "availableMapVersion": ["8.30.92.153"]
+    },
+    "route": [
+      {
+        "waypoint": [
+          {
+            "linkId": "-841192081",
+            "mappedPosition": {
+              "latitude": 60.1711643,
+              "longitude": 24.9325919
+            },
+            "originalPosition": {
+              "latitude": 60.17116,
+              "longitude": 24.9325799
+            },
+            "type": "stopOver",
+            "spot": 1,
+            "sideOfStreet": "neither",
+            "mappedRoadName": "Arkadiankatu",
+            "label": "Arkadiankatu",
+            "shapeIndex": 0
+          },
+          {
+            "linkId": "-582097955",
+            "mappedPosition": {
+              "latitude": 68.6598246,
+              "longitude": 27.5404088
+            },
+            "originalPosition": {
+              "latitude": 68.6598299,
+              "longitude": 27.5404099
+            },
+            "type": "stopOver",
+            "spot": 0.5,
+            "sideOfStreet": "neither",
+            "mappedRoadName": "Petsamontie",
+            "label": "Petsamontie - 91",
+            "shapeIndex": 9245
+          }
+        ],
+        "mode": {
+          "type": "fastest",
+          "transportModes": ["car"],
+          "trafficMode": "disabled",
+          "feature": []
+        },
+        "leg": [
+          {
+            "start": {
+              "linkId": "-841192081",
+              "mappedPosition": {
+                "latitude": 60.1711643,
+                "longitude": 24.9325919
+              },
+              "originalPosition": {
+                "latitude": 60.17116,
+                "longitude": 24.9325799
+              },
+              "type": "stopOver",
+              "spot": 1,
+              "sideOfStreet": "neither",
+              "mappedRoadName": "Arkadiankatu",
+              "label": "Arkadiankatu",
+              "shapeIndex": 0
+            },
+            "end": {
+              "linkId": "-582097955",
+              "mappedPosition": {
+                "latitude": 68.6598246,
+                "longitude": 27.5404088
+              },
+              "originalPosition": {
+                "latitude": 68.6598299,
+                "longitude": 27.5404099
+              },
+              "type": "stopOver",
+              "spot": 0.5,
+              "sideOfStreet": "neither",
+              "mappedRoadName": "Petsamontie",
+              "label": "Petsamontie - 91",
+              "shapeIndex": 9245
+            },
+            "length": 1112536,
+            "travelTime": 49239,
+            "maneuver": [
+              {
+                "position": {
+                  "latitude": 60.1711643,
+                  "longitude": 24.9325919
+                },
+                "instruction": "Head toward <span class=\"toward_street\">Eteläinen Rautatiekatu</span> on <span class=\"street\">Arkadiankatu</span>. <span class=\"distance-description\">Go for <span class=\"length\">8 m</span>.</span>",
+                "travelTime": 6,
+                "length": 8,
+                "id": "M1",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 60.1711643,
+                  "longitude": 24.9324417
+                },
+                "instruction": "Turn <span class=\"direction\">right</span> onto <span class=\"next-street\">Pohjoinen Rautatiekatu</span>. <span class=\"distance-description\">Go for <span class=\"length\">194 m</span>.</span>",
+                "travelTime": 33,
+                "length": 194,
+                "id": "M2",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 60.1724303,
+                  "longitude": 24.9347591
+                },
+                "instruction": "Turn <span class=\"direction\">left</span> onto <span class=\"next-street\">Mannerheimintie</span> <span class=\"number\">(1)</span>. <span class=\"distance-description\">Go for <span class=\"length\">1.0 km</span>.</span>",
+                "travelTime": 115,
+                "length": 1003,
+                "id": "M3",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 60.18067,
+                  "longitude": 24.9280751
+                },
+                "instruction": "Keep <span class=\"direction\">right</span> toward <span class=\"sign\"><span lang=\"fi\">Lahti</span>/<span lang=\"sv\">Lahtis</span>/<span lang=\"fi\">Kotka</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">128 m</span>.</span>",
+                "travelTime": 22,
+                "length": 128,
+                "id": "M4",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 60.1817966,
+                  "longitude": 24.9276996
+                },
+                "instruction": "Turn <span class=\"direction\">right</span> onto <span class=\"next-street\">Helsinginkatu</span>. <span class=\"distance-description\">Go for <span class=\"length\">896 m</span>.</span>",
+                "travelTime": 91,
+                "length": 896,
+                "id": "M5",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 60.1858628,
+                  "longitude": 24.9403596
+                },
+                "instruction": "Turn <span class=\"direction\">slightly left</span> onto <span class=\"next-street\">Sturenkatu</span>. <span class=\"distance-description\">Go for <span class=\"length\">1.7 km</span>.</span>",
+                "travelTime": 252,
+                "length": 1743,
+                "id": "M6",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 60.1970851,
+                  "longitude": 24.9620533
+                },
+                "instruction": "Turn <span class=\"direction\">left</span> onto <span class=\"next-street\">Hämeentie</span>. <span class=\"distance-description\">Go for <span class=\"length\">711 m</span>.</span>",
+                "travelTime": 76,
+                "length": 711,
+                "id": "M7",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 60.2030396,
+                  "longitude": 24.9652076
+                },
+                "instruction": "Continue on <span class=\"next-street\">Kustaa Vaasan tie</span> <span class=\"number\">(E75)</span> toward <span class=\"sign\"><span lang=\"fi\">4</span>/<span lang=\"fi\">Lahti</span>/<span lang=\"sv\">Lahtis</span>/<span lang=\"fi\">7</span>/<span lang=\"fi\">Kotka</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">141 km</span>.</span>",
+                "travelTime": 4813,
+                "length": 140677,
+                "id": "M8",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 61.2831652,
+                  "longitude": 26.0705566
+                },
+                "instruction": "Take exit <span class=\"exit\">26</span> toward <span class=\"sign\"><span lang=\"fi\">Jyväskylä</span>/<span lang=\"fi\">Hartola</span></span> onto <span class=\"number\">E75</span> <span class=\"next-street\">(Jyväskyläntie)</span>. <span class=\"distance-description\">Go for <span class=\"length\">15.6 km</span>.</span>",
+                "travelTime": 663,
+                "length": 15554,
+                "id": "M9",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 61.4146686,
+                  "longitude": 26.0378766
+                },
+                "instruction": "Continue on <span class=\"next-street\">Itä-Päijänteentie</span> <span class=\"number\">(E75)</span>. <span class=\"distance-description\">Go for <span class=\"length\">98.0 km</span>.</span>",
+                "travelTime": 4238,
+                "length": 97997,
+                "id": "M10",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 62.2299743,
+                  "longitude": 25.9005046
+                },
+                "instruction": "Take the <span class=\"exit\">2nd exit</span> from roundabout onto <span class=\"next-street\">Vaajakoskentie</span> <span class=\"number\">(E63/E75)</span> toward <span class=\"sign\"><span lang=\"fi\">Jyväskylä</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">2.5 km</span>.</span>",
+                "travelTime": 206,
+                "length": 2499,
+                "id": "M11",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 62.2464752,
+                  "longitude": 25.8729959
+                },
+                "instruction": "Take the <span class=\"exit\">3rd exit</span> from roundabout onto <span class=\"next-street\">Vaajakosken Moottoritie</span> <span class=\"number\">(E63/E75)</span> toward <span class=\"sign\"><span lang=\"fi\">Jyväskylä</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">5.5 km</span>.</span>",
+                "travelTime": 262,
+                "length": 5495,
+                "id": "M12",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 62.2456169,
+                  "longitude": 25.7776165
+                },
+                "instruction": "Take the exit toward <span class=\"sign\"><span lang=\"fi\">Oulu</span>/<span lang=\"fi\">Kokkola</span>/<span lang=\"fi\">Lentoasema</span></span> onto <span class=\"number\">E63/E75</span> <span class=\"next-street\">(Nelostie)</span>. <span class=\"distance-description\">Go for <span class=\"length\">42.2 km</span>.</span>",
+                "travelTime": 2109,
+                "length": 42241,
+                "id": "M13",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 62.6032948,
+                  "longitude": 25.6983411
+                },
+                "instruction": "Take the <span class=\"exit\">2nd exit</span> from roundabout onto <span class=\"next-street\">Ouluntie</span> <span class=\"number\">(E75)</span> toward <span class=\"sign\"><span lang=\"fi\">Oulu</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">139 km</span>.</span>",
+                "travelTime": 6333,
+                "length": 138849,
+                "id": "M14",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 63.7144804,
+                  "longitude": 25.9171987
+                },
+                "instruction": "Continue on <span class=\"next-street\">Ouluntie</span> <span class=\"number\">(E75)</span> toward <span class=\"sign\"><span lang=\"fi\">Oulu</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">32.4 km</span>.</span>",
+                "travelTime": 1432,
+                "length": 32449,
+                "id": "M15",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 63.9742792,
+                  "longitude": 25.7626283
+                },
+                "instruction": "Pass <span class=\"roundabout-count\">3</span> roundabouts and continue on <span class=\"next-street\">Ouluntie</span> <span class=\"number\">(E75)</span>. <span class=\"distance-description\">Go for <span class=\"length\">101 km</span>.</span>",
+                "travelTime": 4753,
+                "length": 101315,
+                "id": "M16",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 64.8150337,
+                  "longitude": 25.485481
+                },
+                "instruction": "Take the <span class=\"exit\">1st exit</span> from roundabout onto <span class=\"number\">E8/E75</span> toward <span class=\"sign\"><span lang=\"fi\">Oulu</span>/<span lang=\"fi\">Kempele</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">58.5 km</span>.</span>",
+                "travelTime": 2410,
+                "length": 58529,
+                "id": "M17",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 65.3173149,
+                  "longitude": 25.3735471
+                },
+                "instruction": "Take the <span class=\"exit\">2nd exit</span> from roundabout onto <span class=\"next-street\">Ouluntie</span> <span class=\"number\">(E8/E75)</span> toward <span class=\"sign\"><span lang=\"fi\">Kemi</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">613 m</span>.</span>",
+                "travelTime": 67,
+                "length": 613,
+                "id": "M18",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 65.3221107,
+                  "longitude": 25.3789222
+                },
+                "instruction": "Take the <span class=\"exit\">2nd exit</span> from roundabout onto <span class=\"next-street\">Kemintie</span> <span class=\"number\">(E8/E75)</span> toward <span class=\"sign\"><span lang=\"fi\">Kemi</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">78.1 km</span>.</span>",
+                "travelTime": 3515,
+                "length": 78061,
+                "id": "M19",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 65.8143497,
+                  "longitude": 24.4982994
+                },
+                "instruction": "Take the exit toward <span class=\"sign\"><span lang=\"fi\">Rovaniemi</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">589 m</span>.</span>",
+                "travelTime": 44,
+                "length": 589,
+                "id": "M20",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 65.8188879,
+                  "longitude": 24.4927311
+                },
+                "instruction": "Turn <span class=\"direction\">right</span> onto <span class=\"next-street\">Jäämerentie</span> <span class=\"number\">(E75)</span> toward <span class=\"sign\"><span lang=\"fi\">Rovaniemi</span>/<span lang=\"fi\">Tervola</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">102 km</span>.</span>",
+                "travelTime": 4822,
+                "length": 101646,
+                "id": "M21",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 66.4876699,
+                  "longitude": 25.6553185
+                },
+                "instruction": "Continue on <span class=\"next-street\">Valtatie 4</span> <span class=\"number\">(E75)</span> toward <span class=\"sign\"><span lang=\"fi\">Keskusta</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">3.1 km</span>.</span>",
+                "travelTime": 185,
+                "length": 3086,
+                "id": "M22",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 66.497519,
+                  "longitude": 25.7159257
+                },
+                "instruction": "Keep <span class=\"direction\">left</span> onto <span class=\"next-street\">Valtatie 4</span> <span class=\"number\">(E75)</span> toward <span class=\"sign\"><span lang=\"fi\">Ounasvaara</span>/<span lang=\"fi\">Ivalo</span>/<span lang=\"fi\">Kemijärvi</span>/<span lang=\"fi\">Lentoasema</span>/<span lang=\"fi\">82</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">8.2 km</span>.</span>",
+                "travelTime": 407,
+                "length": 8249,
+                "id": "M23",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 66.5440285,
+                  "longitude": 25.8441246
+                },
+                "instruction": "Continue on <span class=\"next-street\">Sodankyläntie</span> <span class=\"number\">(E75)</span> toward <span class=\"sign\"><span lang=\"fi\">Ivalo</span>/<span lang=\"fi\">82</span>/<span lang=\"fi\">Kemijärvi</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">121 km</span>.</span>",
+                "travelTime": 5342,
+                "length": 120528,
+                "id": "M24",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 67.4132466,
+                  "longitude": 26.5893066
+                },
+                "instruction": "Take the <span class=\"exit\">2nd exit</span> from roundabout onto <span class=\"next-street\">Sodankyläntie</span> <span class=\"number\">(E75)</span> toward <span class=\"sign\"><span lang=\"fi\">Ivalo</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">895 m</span>.</span>",
+                "travelTime": 109,
+                "length": 895,
+                "id": "M25",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 67.4211967,
+                  "longitude": 26.5882015
+                },
+                "instruction": "Take the <span class=\"exit\">2nd exit</span> from roundabout onto <span class=\"next-street\">Ivalontie</span> <span class=\"number\">(E75)</span> toward <span class=\"sign\"><span lang=\"fi\">Ivalo</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">158 km</span>.</span>",
+                "travelTime": 6839,
+                "length": 157982,
+                "id": "M26",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 68.655045,
+                  "longitude": 27.5415337
+                },
+                "instruction": "Pass <span class=\"roundabout-count\">2</span> roundabouts and continue on <span class=\"next-street\">Ivalontie</span> <span class=\"number\">(E75)</span>. <span class=\"distance-description\">Go for <span class=\"length\">538 m</span>.</span>",
+                "travelTime": 83,
+                "length": 538,
+                "id": "M27",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 68.659755,
+                  "longitude": 27.5391948
+                },
+                "instruction": "Take the <span class=\"exit\">1st exit</span> from roundabout onto <span class=\"next-street\">Petsamontie</span> <span class=\"number\">(91)</span> toward <span class=\"sign\"><span lang=\"fi\">Murmansk</span>/<span lang=\"fi\">Nellim</span>/<span lang=\"fi\">Njellim</span></span>. <span class=\"distance-description\">Go for <span class=\"length\">60 m</span>.</span>",
+                "travelTime": 12,
+                "length": 60,
+                "id": "M28",
+                "_type": "PrivateTransportManeuverType"
+              },
+              {
+                "position": {
+                  "latitude": 68.6598246,
+                  "longitude": 27.5404088
+                },
+                "instruction": "Arrive at <span class=\"street\">Petsamontie</span> <span class=\"number\">(91)</span>.",
+                "travelTime": 0,
+                "length": 1,
+                "id": "M29",
+                "_type": "PrivateTransportManeuverType"
+              }
+            ]
+          }
+        ],
+        "summary": {
+          "distance": 1112536,
+          "trafficTime": 54548,
+          "baseTime": 49239,
+          "flags": ["tunnel", "motorway", "builtUpArea"],
+          "text": "The trip takes <span class=\"length\">1113 km</span> and <span class=\"time\">13:41 h</span>.",
+          "travelTime": 49239,
+          "_type": "RouteSummaryType"
+        }
+      }
+    ],
+    "language": "en-us"
+  }
+}
